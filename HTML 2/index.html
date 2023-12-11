@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" type="image/png" href="icono.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavaFutMX - Noticias de Futbolistas Mexicanos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #3498db;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+        }
+
+        img {
+            border-radius: 50%;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        nav {
+            background-color: #2980b9;
+            padding: 0.5em;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 0.5em;
+            display: inline-block;
+        }
+
+        .main-section form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.main-section label {
+    margin-right: 5px;
+}
+
+.main-section input[type="text"] {
+    padding: 5px;
+}
+
+.main-section input[type="submit"] {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+        .main-section {
+            padding: 4em;
+            text-align: justify;
+            background-color: #fff;
+            margin: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .wave {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 15vh;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3498db" fill-opacity="1" d="M0,64L48,90.7C96,117,192,171,288,192C384,213,480,203,576,176C672,149,768,107,864,74.7C960,43,1056,21,1152,48C1248,75,1344,149,1392,186.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            animation: wave-animation 10s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes wave-animation {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+            animation: fade 1s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .gallery img {
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2em;
+        }
+
+        .gallery figure {
+            margin: 0;
+            text-align: center;
+            margin-bottom: 1em;
+            width: 45%;
+        }
+
+        .gallery figcaption {
+            margin-top: 0.5em;
+            color: #555;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+        }
+
+        /* Posiciona el formulario en la parte superior derecha */
+        #search-form {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="position: fixed; bottom: 20%; right: 20px; transform: translateY(20%);">
+        <button onclick="scrollToTop()">Volver arriba</button>
+    </div>
+
+    <div class="top-bar"></div>
+    <header>
+        <img src="PERFIL.jpeg" alt="Logo" width="57" height="57">
+        <h1>NavaFutMX - Noticias de Futbolistas Mexicanos</h1>
+        <div class="wave"></div>
+    </header>
+
+    <!-- Formulario de búsqueda -->
+    <form id="search-form" action="#" method="post">
+        <label for="search">Buscar:</label>
+        <input type="text" id="search" name="search" placeholder="Ingresa tu búsqueda...">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <div class="main-section">
+        <h2>¡Bienvenido!</h2>
+        <p>Explora las últimas noticias y artículos sobre futbolistas mexicanos. Desde la Liga MX hasta la selección nacional, mantente informado sobre el emocionante mundo del fútbol en México.</p>
+
+        <p>Nuestro equipo de expertos en fútbol está comprometido a ofrecerte una perspectiva única y reflexiva sobre el estado actual del deporte más querido de México. Analizamos tácticas, estrategias, dinámicas y mucho más para que vivas el fútbol de una manera diferente.</p>
+    </div>
+
+    <!-- Galería de imágenes con descripciones -->
+    <div class="gallery">
+
+        <figure>
+            <a href="file:///C:/Users/garza/OneDrive/Desktop/HTML%202.1/index.html"><img src="imagen1.jpg" alt="Santiago Gimenez - Feyenoord" onclick="showDescription('Descripción de Santiago Gimenez - Feyenoord')">
+            <figcaption>Santiago Gimenez - Feyenoord</figcaption>
+        </a></figure>
+        <figure>
+            <img src="imagen2.jpeg" alt="Luis Chavez - Dynamo Moscu" onclick="showDescription('Descripción de Luis Chavez - Dynamo Moscu')">
+            <figcaption>Luis Chavez - Dynamo Moscu</figcaption>
+        </figure>
+        <figure>
+            <img src="imagen3.jpg" alt="Edson Alvarez - West Ham United" onclick="showDescription('Descripción de Edson Alvarez - West Ham United')">
+            <figcaption>Edson Alvarez - West Ham United</figcaption>
+        </figure>
+        <figure>
+            <img src="imagen4.jpg" alt="Jhoan Vázquez - Genoa" onclick="showDescription('Descripción de Jhoan Vázquez - Genoa')">
+            <figcaption>Jhoan Vázquez - Genoa</figcaption>
+        </figure>
+        <figure>
+            <img src="imagen5.jpg" alt="Hirving Lozano - PSV" onclick="showDescription('Descripción de Hirving Lozano - PSV')">
+            <figcaption>Hirving Lozano - PSV</figcaption>
+        </figure>
+    </div>
+
+    <!-- Función para mostrar la descripción -->
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const searchForm = document.getElementById('search-form');
+
+    searchForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const searchTerm = document.getElementById('search').value.trim().toLowerCase();
+        // Realiza acciones con el término de búsqueda, como redirigir a otra página o mostrar resultados.
+        // Puedes ajustar esto según tus necesidades.
+        alert('Realiza acciones con el término de búsqueda: ' + searchTerm);
+    });
+});
+
+document.addEventListener("scroll", function () {
+            const scrollPosition = window.scrollY;
+            const blueShade = scrollPosition % 255;
+            const backgroundColor = `rgb(173, 216, 230, ${blueShade})`;
+            document.body.style.backgroundColor = backgroundColor;
+        });
+
+        function showDescription(description) {
+            alert(description);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+    </script>
+
+    <div class="main-section">
+        <p>
+            ¿Quieres compartir tus propias noticias o sugerencias? Contáctanos en <a href="mailto:tucorreo@gmail.com">tucorreo@gmail.com</a>.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 NavaFutMX - Noticias de Futbolistas Mexicanos</p>
+    </footer>
+
+</body>
+
+</html>
